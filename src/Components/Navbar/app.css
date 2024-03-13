@@ -1,23 +1,32 @@
-.navbarDiv{
-    box-shadow: 1px 1px 10px 3px rgba(0,0,0,15%);
+.navbarDiv {
+    box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 15%);
+    background-color: white;
+    position: sticky !important;
+    top: 0;
+    left: 0;
 }
 
 
-.containerOfNavbar{
+.containerOfNavbar {
     align-items: center !important;
     justify-content: space-between;
 }
 
-.ulOfNavbar{
+.ulOfNavbar {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto 0;
 }
 
-.ulOfNavbar li{
+.ulOfNavbar li {
     list-style: none;
     margin: 0 15px;
     font-weight: 500;
     cursor: pointer;
+}
+
+.active-scroll-spy {
+    background-color: yellowgreen;
+    border-radius: 15px;
 }
