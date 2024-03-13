@@ -1,6 +1,7 @@
-.navbarLogo{
-    border-radius: 50%;
+.navbarDiv{
+    box-shadow: 1px 1px 10px 3px rgba(0,0,0,15%);
 }
+
 
 .containerOfNavbar{
     align-items: center !important;
@@ -17,4 +18,6 @@
 .ulOfNavbar li{
     list-style: none;
     margin: 0 15px;
+    font-weight: 500;
+    cursor: pointer;
 }

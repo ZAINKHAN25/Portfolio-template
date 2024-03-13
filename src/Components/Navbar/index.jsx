@@ -6,10 +6,10 @@ import "./app.css";
 function Navbar() {
   return (
     <nav>
-      <nav className="navbar bg-body-tertiary p-2">
+      <nav className="navbar navbarDiv p-2">
         <div className="container containerOfNavbar p-0 d-flex align-items-center">
           <div>
-            <img src="../../1.png" alt="Bootstrap" width="60" height="60" />
+            <img src="../../1.png" style={{ borderRadius: "50%", cursor: "pointer"}} alt="Bootstrap" width="60" height="60" />
           </div>
           <ul className='ulOfNavbar'>
             <li>HOME</li>
