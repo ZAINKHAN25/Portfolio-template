@@ -1,13 +1,227 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    overflow-x: hidden;
+}
+
+/* navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar-brand img {
+    width: 50px;
+}
+
+/* nav-link without scroll */
+.nav-link {
+    text-transform: uppercase;
+    position: relative;
+    background-color: transparent !important;
+    color: white;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.5s ease;
+}
+
+.nav-item:hover .nav-link::before,
+.nav-link.active::before {
+    width: 80%;
+}
+
+.nav-item:hover .nav-link,
+.nav-link.active {
+    color: white !important;
+}
+
+/* end nav-link without scroll */
+
+
+/* nav-link with scroll */
+
+.bg-scroll {
+    background-color: white;
+    box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 20%);
+}
+
+.bg-scroll .nav-link {
+    text-transform: uppercase;
+    position: relative;
+    background-color: transparent !important;
+    color: black;
+}
+
+
+.bg-scroll .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #0db3c7;
+    transition: width 0.5s ease;
+}
+
+.bg-scroll .nav-item:hover .nav-link::before,
+.bg-scroll .nav-link.active::before {
+    width: 80%;
+}
+
+.bg-scroll .nav-item:hover .nav-link,
+.bg-scroll .nav-link.active {
+    color: black !important;
+}
+
+.navbarToggler {
+    display: none;
+}
+
+/* end navbar */
+/* homeDiv */
+.homeDiv {
+    height: 100vh;
+    position: relative;
+    padding-top: 80px;
+}
+
+.homeImg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    height: 100%;
+    animation: fadeInRight 1s ease-in-out;
+}
+
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* end homeDiv */
+
+
+.section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.section:nth-child(odd) {
+    background-color: #9b67e5;
+}
+
+.section:nth-child(1) {
+    display: block;
+    background-color: transparent;
+    color: black;
+}
+
+.section:nth-child(even) {
+    background-color: #621bc5;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        background-color: white;
+        box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 20%);
+    }
+
+    .nav-link {
+        text-transform: uppercase;
+        position: relative;
+        background-color: transparent !important;
+        color: black;
+    }
+
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #0db3c7;
+        transition: width 0.5s ease;
+    }
+
+    .nav-item:hover .nav-link::before,
+    .nav-link.active::before {
+        width: 80%;
+    }
+
+    .nav-item:hover .nav-link,
+    .nav-link.active {
+        color: black !important;
+    }
+
+    .navbarToggler {
+        display: block;
+    }
+
+    .navbar-brand {
+        background-color: white;
+    }
+
+    .nav-link {
+        width: fit-content;
+    }
+
+    .navbar-nav {
+        gap: 0 !important;
+    }
+
+    .navbarToggler:active {
+        border-color: #0db3c7 !important;
+    }
+
+    .navbarToggler:hover {
+        background-color: #0db3c7;
+        transition: all .3s;
+    }
+
+    .toggler {
+        color: #0db3c7;
+        font-size: 24px;
+    }
+
+    .navbarToggler:hover .toggler {
+        color: white;
+    }
+}
+
+@media (max-width: 991px) {
+    .homeImg {
+        display: none;
+    }
 }
