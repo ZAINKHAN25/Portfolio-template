@@ -13,7 +13,7 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1;
+    z-index: 99;
 }
 
 .navbar-brand img {
@@ -99,7 +99,8 @@ body {
 .homeDiv {
     height: 100vh;
     position: relative;
-    padding-top: 80px;
+    padding: 80px;
+    background-color: white;
 }
 
 .homeImg {
@@ -108,14 +109,106 @@ body {
     top: 0;
     background-repeat: no-repeat;
     height: 100%;
-    animation: fadeInRight 1s ease-in-out;
+    animation: fadeInRight .5s ease-in-out;
+}
+
+.ManUsingLaptop {
+    position: absolute;
+    right: 100px;
+    bottom: 50px;
+    width: 32vw;
+    height: 64vh;
+    background-repeat: no-repeat;
+    animation: fadeInBottom .5s ease-in-out;
+}
+
+.htmlIcon {
+    position: absolute;
+    top: 100px;
+    right: 10%;
+    width: 80px;
+    height: 100px;
+    animation: topToBottomAnim infinite 2s 1s ease-in-out;
+    animation: fadeInBottom .5s ease-in-out;
+}
+
+.cssIcon {
+    position: absolute;
+    top: 150px;
+    right: 16%;
+    width: 80px;
+    height: 100px;
+    animation: topToBottomAnim infinite 2s .5s ease-in-out;
+    animation: fadeInBottom .5s ease-in-out;
+}
+
+.jsIcon {
+    position: absolute;
+    top: 150px;
+    right: 28%;
+    width: 80px;
+    height: 100px;
+    animation: topToBottomAnim infinite 2s .8s ease-in-out;
+    animation: fadeInBottom .5s ease-in-out;
+}
+
+.bootstrapIcon {
+    position: absolute;
+    top: 110px;
+    right: 34%;
+    width: 90px;
+    height: 80px;
+    animation: topToBottomAnim infinite 2s .2s ease-in-out;
+    animation: fadeInBottom .5s ease-in-out;
+}
+
+.txtDivOfHome {
+    width: 60%;
+}
+
+.txtDivOfHome h1 {
+    font-size: 50px;
+    font-weight: bold;
+    animation: fadeInBottom .5s ease-in-out;
+}
+
+.spanOfFrelancer {
+    color: #0db3c7;
+}
+
+.CreateThousandOfWebsites {
+    background-color: rgba(13, 179, 199, .12);
+    color: #0db3c7;
+    font-weight: 600;
+    font-size: 17px;
+    text-align: center;
+    width: max-content;
+    letter-spacing: 4px;
+    padding: 10px 30px;
+    margin-top: 50px !important;
+    animation: fadeInBottom .4s ease-in-out;
+}
+
+.btnOfHireMe {
+    background-color: #0db3c7;
+    box-shadow: 0px 0px 0px transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transform: translateY(0);
+    transition: all .5s;
+    animation: fadeInBottom .8s ease-in-out;
+}
+
+.btnOfHireMe:hover {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 30%);
 }
 
 
 @keyframes fadeInRight {
     0% {
         opacity: 0;
-        transform: translateX(80px);
+        transform: translateX(50%);
     }
 
     100% {
@@ -123,6 +216,33 @@ body {
         transform: translateX(0px);
     }
 }
+
+
+@keyframes fadeInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes topToBottomAnim {
+    0%{
+        transform: translateY(20px);  
+    }
+    
+    50%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(20px);  
+    }
+}
+
 
 /* end homeDiv */
 
