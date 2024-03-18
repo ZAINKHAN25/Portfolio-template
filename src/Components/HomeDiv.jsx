@@ -1,4 +1,7 @@
 import React from 'react';
+import { TypeAnimation } from 'react-type-animation'
+
+
 import bannerImg2 from '../assets/bannerImg2.svg';
 import manUsingLaptop from "../assets/man-using-laptop.png";
 import htmlIcon from "../assets/html-icon.png";
@@ -12,8 +15,21 @@ function HomeDiv() {
             <div className='txtDivOfHome p-5'>
                 <h1>
                     <div>Hey there!</div>
-                    I'm Zain Independent <span className='spanOfFrelancer'>Frelencer</span>
-                </h1>   
+                    I'm <span className='spanOfFrelancer'>
+                        <TypeAnimation
+                            sequence={[
+                                'Zain',
+                                2000,
+                                'freelancer',
+                                2000,
+                                'Frontend Developer',
+                                2000,
+                                'MERN Stack Devloper',
+                                2000,
+                            ]}
+                            repeat={Infinity} />
+                    </span>
+                </h1>
                 <h3 className='CreateThousandOfWebsites mb-5'>I CREATE THOUSAND OFF WEBSITE</h3>
                 <button className='btnOfHireMe fs-4 px-5 py-2'>Hire Me</button>
             </div>
