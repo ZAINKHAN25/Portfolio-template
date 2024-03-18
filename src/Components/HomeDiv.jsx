@@ -13,7 +13,7 @@ function HomeDiv() {
                 <h1>
                     <div>Hey there!</div>
                     I'm Zain Independent <span className='spanOfFrelancer'>Frelencer</span>
-                </h1>
+                </h1>   
                 <h3 className='CreateThousandOfWebsites mb-5'>I CREATE THOUSAND OFF WEBSITE</h3>
                 <button className='btnOfHireMe fs-4 px-5 py-2'>Hire Me</button>
             </div>
