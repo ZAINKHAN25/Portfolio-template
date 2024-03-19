@@ -7,7 +7,6 @@ import HomeDiv from './HomeDiv.jsx'
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
-    const [isOpen, setIsOpen] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => {

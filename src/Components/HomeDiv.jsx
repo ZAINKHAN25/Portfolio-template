@@ -12,6 +12,11 @@ import bootstrapIcon from "../assets/bootstrap-5-logo-icon.webp";
 function HomeDiv() {
     return (
         <div id='home' className="homeDiv">
+            <div className="bubble2"></div>
+            <div className="bubble1"></div>
+            <div className="bubble3"></div>
+            <div className="bubble4"></div>
+            <div className="bubble5"></div>
             <div className='txtDivOfHome p-5'>
                 <h1>
                     <div>Hey there!</div>
@@ -35,10 +40,10 @@ function HomeDiv() {
             </div>
             <img src={bannerImg2} alt="" className='homeImg' />
 
-            <img className='htmlIcon' src={htmlIcon} alt="" srcset="" />
-            <img className='cssIcon' src={cssIcon} alt="" srcset="" />
-            <img className='jsIcon' src={jsIcon} alt="" srcset="" />
-            <img className='bootstrapIcon' src={bootstrapIcon} alt="" srcset="" />
+            <img className='htmlIcon' src={htmlIcon} alt="" srcSet="" />
+            <img className='cssIcon' src={cssIcon} alt="" srcSet="" />
+            <img className='jsIcon' src={jsIcon} alt="" srcSet="" />
+            <img className='bootstrapIcon' src={bootstrapIcon} alt="" srcSet="" />
 
 
             <img src={manUsingLaptop} alt="" className='ManUsingLaptop' />
