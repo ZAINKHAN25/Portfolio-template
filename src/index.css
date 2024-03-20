@@ -286,7 +286,7 @@ body {
 @keyframes fadeInRight {
     0% {
         opacity: 0;
-        transform: translateX(50%);
+        transform: translateX(80px);
     }
 
     100% {
@@ -294,7 +294,6 @@ body {
         transform: translateX(0px);
     }
 }
-
 
 @keyframes fadeInBottom {
     0% {
@@ -326,28 +325,93 @@ body {
 /* end homeDiv */
 
 
-.section {
+/* skillDiv */
+.servicesDiv {
+    background-color: #fafafa !important;
+    color: #868e96;
     width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
 }
 
-.section:nth-child(odd) {
-    background-color: #9b67e5;
+.servicesHeading {
+    font-size: 30px;
+    text-align: center;
 }
 
-.section:nth-child(1) {
-    display: block;
-    background-color: transparent;
-    color: black;
+.servicesSubTitle {
+    font-size: 16px;
+    text-align: center;
+    color: #868e96;
 }
 
-.section:nth-child(even) {
-    background-color: #621bc5;
+.iconsList {
+    list-style-type: none;
 }
+
+.servicesIcon {
+    font-size: 50px;
+    color: #868e96;
+}
+
+.servicesIconTitle {
+    color: #868e96;
+    font-size: 14px;
+}
+
+.servicesImg {
+    width: 70%;
+    height: 100%;
+}
+
+.servicesImg.fadeInRight {
+    animation: fadeInRight 1s ease-in-out;
+}
+
+
+.singleIcon:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .homeImg {
+        display: none;
+    }
+
+    .homeImgDiv,
+    .servicesIconDiv {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 540px) {
+
+    .htmlIcon,
+    .jsonIcon {
+        width: 30px;
+    }
+}
+
+@media (max-width: 320px) {
+    .homeDiv .row h2 {
+        font-size: 40px;
+    }
+
+    .htmlIcon,
+    .jsonIcon {
+        width: 20px;
+    }
+}
+
+.singleIcon:hover .servicesIcon {
+    color: #0db3c7;
+    transition: all .5s;
+}
+
+.servicesListIcon {
+    width: 20px;
+    margin: 0 10px;
+}
+
+/* end servicesDiv */
 
 @media (max-width: 991px) {
     .navbar {
@@ -471,4 +535,53 @@ body {
         margin-left: 25vw;
     }
 
+}
+
+
+@media (max-width: 991px) {
+    .homeImg {
+        display: none;
+    }
+
+    .homeImgDiv,
+    .servicesIconDiv {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 540px) {
+
+    .htmlIcon,
+    .jsonIcon {
+        width: 30px;
+    }
+}
+
+@media (max-width: 320px) {
+    .homeDiv .row h2 {
+        font-size: 40px;
+    }
+
+    .htmlIcon,
+    .jsonIcon {
+        width: 20px;
+    }
+}
+
+
+.section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.section:nth-child(odd) {
+    background-color: #9b67e5;
+}
+
+.section:nth-child(even) {
+    background-color: #621bc5;
 }

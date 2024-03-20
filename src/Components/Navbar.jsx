@@ -4,9 +4,11 @@ import { FaBars } from "react-icons/fa";
 
 
 import HomeDiv from './HomeDiv.jsx'
+import Services from './Services.jsx';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
+    const [isServices, setIsServices] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,6 +25,20 @@ export default function Navbar() {
         };
     }, [scrolled]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const serviceDiv = document.getElementById("service");
+            const isServiceScrolled = window.scrollY > (serviceDiv.offsetHeight - 300);
+            setIsServices(isServiceScrolled); // Directly update isServices
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 
     return (
         <>
@@ -33,7 +49,7 @@ export default function Navbar() {
                     </a>
                     <button className="navbarToggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="togglerIcon">
-                            <FaBars className='toggler'/>
+                            <FaBars className='toggler' />
                         </span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -74,9 +90,9 @@ export default function Navbar() {
             </nav>
 
             <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="scrollspy-example bg-body-tertiary rounded-2" tabIndex="0">
-                <HomeDiv/>
+                <HomeDiv />
                 <div id='service' className="section">
-                    <h1>service</h1>
+                    <Services scrolled={isServices} />
                 </div>
                 <div id='portfolio' className="section">
                     <h1>portfolio</h1>
