@@ -61,8 +61,8 @@ export default function Navbar() {
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#service">
-                                    service
+                                <a className="nav-link" href="#skills">
+                                    skills
                                     <span id="line"></span>
                                 </a>
                             </li>
@@ -73,9 +73,8 @@ export default function Navbar() {
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#skills">
-                                    skills
-                                    <span id="line"></span>
+                                <a className="nav-link" href="#service">
+                                    service
                                 </a>
                             </li>
                             <li className="nav-item">
@@ -91,13 +90,13 @@ export default function Navbar() {
 
             <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="scrollspy-example bg-body-tertiary rounded-2" tabIndex="0">
                 <HomeDiv />
-                <div id='service' className="section">
+                <div id='skills' className="section">
                     <Services scrolled={isServices} />
                 </div>
                 <div id='portfolio' className="section">
                     <h1>portfolio</h1>
                 </div>
-                <div id='skills' className="section">
+                <div id='service' className="section">
                     <h1>Skills</h1>
                 </div>
                 <div id='contact' className="section">
