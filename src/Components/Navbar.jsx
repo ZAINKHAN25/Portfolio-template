@@ -1,16 +1,18 @@
-import navbarLogo from '../assets/navbarLogo.png'
+import navbarLogo from '../assets/navbarLogo.png';
 import { useEffect, useState } from 'react';
 import { FaBars } from "react-icons/fa";
 
-
-import HomeDiv from './HomeDiv.jsx'
+import HomeDiv from './HomeDiv.jsx';
 import Services from './Services.jsx';
+
+
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [isServices, setIsServices] = useState(false);
 
     useEffect(() => {
+
         const handleScroll = () => {
             const isScrolled = window.scrollY > 20;
             if (isScrolled !== scrolled) {
@@ -23,9 +25,11 @@ export default function Navbar() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+
     }, [scrolled]);
 
     useEffect(() => {
+
         const handleScroll = () => {
             const serviceDiv = document.getElementById("service");
             const isServiceScrolled = window.scrollY > (serviceDiv.offsetHeight - 300);
@@ -37,7 +41,9 @@ export default function Navbar() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+
     }, []);
+
 
 
     return (
@@ -105,4 +111,4 @@ export default function Navbar() {
             </div>
         </>
     )
-}
+};
