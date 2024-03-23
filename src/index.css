@@ -327,17 +327,13 @@ body {
 
 /* skillDiv */
 
-.serviceDiv{
+.skillsDiv {
     background-color: #fafafa;
     width: 100%;
 }
 
-.listContentDiv{
+.listContentDiv {
     color: black;
-}
-
-.skillsDiv {
-    background-color: #fafafa;
 }
 
 .skillsHeading {
@@ -412,6 +408,17 @@ body {
 }
 
 /* end skillsDiv */
+
+/* servicesDiv */
+.sevicesIcon {
+    font-size: 24px;
+}
+
+.serviceHeading h3 {
+    margin-bottom: 0;
+}
+
+/* end servicesDiv */
 
 
 

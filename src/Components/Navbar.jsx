@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { FaBars } from "react-icons/fa";
 
 import HomeDiv from './HomeDiv.jsx';
+import Skills from './Skills.jsx';
 import Services from './Services.jsx';
 
 
@@ -73,14 +74,14 @@ export default function Navbar() {
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#portfolio">
-                                    portfolio
-                                    <span id="line"></span>
+                                <a className="nav-link" href="#service">
+                                    service
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#service">
-                                    service
+                                <a className="nav-link" href="#portfolio">
+                                    portfolio
+                                    <span id="line"></span>
                                 </a>
                             </li>
                             <li className="nav-item">
@@ -97,6 +98,9 @@ export default function Navbar() {
             <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="scrollspy-example bg-body-tertiary rounded-2" tabIndex="0">
                 <HomeDiv />
                 <div id='skills' className="section">
+                    <Skills scrolled={isServices} />
+                </div>
+                <div id='service' className="section">
                     <Services scrolled={isServices} />
                 </div>
                 <div id='portfolio' className="section">
