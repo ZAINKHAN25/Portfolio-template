@@ -1,5 +1,5 @@
 import navbarLogo from '../assets/navbarLogo.png';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FaBars } from "react-icons/fa";
 
 import HomeDiv from './HomeDiv.jsx';
@@ -10,10 +10,12 @@ import Services from './Services.jsx';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
-    const [isServices, setIsServices] = useState(false);
+    const [isSkills, setIsSkills] = useState(false);
+    const [servicesScroll, setServicesScroll] = useState(false);
+    const skillsRef = useRef(null);
+    const servicesRef = useRef(null);
 
     useEffect(() => {
-
         const handleScroll = () => {
             const isScrolled = window.scrollY > 20;
             if (isScrolled !== scrolled) {
@@ -26,15 +28,14 @@ export default function Navbar() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-
     }, [scrolled]);
 
-    useEffect(() => {
 
+    useEffect(() => {
         const handleScroll = () => {
-            const serviceDiv = document.getElementById("service");
-            const isServiceScrolled = window.scrollY > (serviceDiv.offsetHeight - 300);
-            setIsServices(isServiceScrolled); // Directly update isServices
+            const skillsDivHeight = skillsRef.current.offsetHeight;
+            const isSkillscrolled = window.scrollY > (skillsDivHeight - 500);
+            setIsSkills(isSkillscrolled);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -43,6 +44,21 @@ export default function Navbar() {
             window.removeEventListener('scroll', handleScroll);
         };
 
+    }, []);
+
+
+    useEffect(() => {
+        const handleServicesScroll = () => {
+            const serviceDivHeight = servicesRef.current.offsetHeight;
+            const isScrolled = window.scrollY > (serviceDivHeight - 500);
+            setServicesScroll(isScrolled);
+        };
+
+        window.addEventListener('scroll', handleServicesScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleServicesScroll);
+        };
     }, []);
 
 
@@ -96,18 +112,17 @@ export default function Navbar() {
             </nav>
 
             <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="scrollspy-example bg-body-tertiary rounded-2" tabIndex="0">
-                <HomeDiv />
-                <div id='skills' className="section">
-                    <Skills scrolled={isServices} />
+                <div className='HomeDivParentElement'>
+                    <HomeDiv />
                 </div>
-                <div id='service' className="section">
-                    <Services scrolled={isServices} />
+                <div id='skills' className="skillsDiv px-3 py-5 pb-0 pb-lg-4" ref={skillsRef} style={{ visibility: isSkills && "visible" }}>
+                    <Skills scrolled={isSkills} />
+                </div>
+                <div id='service' className="services px-3 my-5" ref={servicesRef} style={{ visibility: servicesScroll && "visible" }}>
+                    <Services scrolled={servicesScroll} />
                 </div>
                 <div id='portfolio' className="section">
                     <h1>portfolio</h1>
-                </div>
-                <div id='service' className="section">
-                    <h1>Skills</h1>
                 </div>
                 <div id='contact' className="section">
                     <h1>Contact</h1>

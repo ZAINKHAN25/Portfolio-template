@@ -1,31 +1,38 @@
 import { BsJournalBookmarkFill } from "react-icons/bs";
 import { servicesList } from "../Constants/Constants";
 
-export default function Services() {
+export default function Services({ scrolled }) {
     return (
-        <div className='row px-4 py-5 justify-content-center'>
-            {
-                servicesList.map((singleService, index) => {
-                    return (
-                        <div className="col-lg-4 col-md-6 col-12 mt-lg-4 mt-5" key={index}>
-                            <div className="cardDiv d-flex flex-column gap-3 ">
-                                <div className="serviceHeadingDiv d-flex align-items-center gap-2">
-                                    <div className="iconDiv">
-                                        <BsJournalBookmarkFill className="sevicesIcon" />
+        <>
+            <h3 className={`servicesTitle ps-5 ${scrolled && "fadeInLeft"}`}>
+                What I do
+            </h3>
+            <div className={`row px-3 justify-content-center gap-4 my-4 ${scrolled && "fadeInBottom"}`}>
+                {
+                    servicesList.map((singleService, index) => {
+                        return (
+                            <div className="cardDiv col-lg-3 col-md-4 col-12" key={index}>
+                                <div className="d-flex flex-column gap-3 ">
+                                    <div className="serviceHeadingDiv d-flex align-items-center gap-2">
+                                        <div className="iconDiv">
+                                            <BsJournalBookmarkFill className="sevicesIcon" />
+                                        </div>
+                                        <div className="serviceHeading">
+                                            <h4>{singleService.title}</h4>
+                                        </div>
                                     </div>
-                                    <div className="serviceHeading">
-                                        <h3>{singleService.title}</h3>
+                                    <div className="serviceDescDiv">
+                                        <p className="serviceDesc">
+                                            {singleService.description}
+                                        </p>
                                     </div>
-                                </div>
-                                <div className="serviceDesc">
-                                    {singleService.description}
                                 </div>
                             </div>
-                        </div>
-                    )
-                })
-            }
+                        )
+                    })
+                }
 
-        </div>
+            </div>
+        </>
     )
 }
