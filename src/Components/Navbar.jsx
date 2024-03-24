@@ -92,6 +92,7 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <a className="nav-link" href="#service">
                                     service
+                                    <span id="line"></span>
                                 </a>
                             </li>
                             <li className="nav-item">
