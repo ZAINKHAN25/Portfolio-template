@@ -3,6 +3,9 @@ import skillsImg from '../assets/skillsImg.svg'
 import skillsListIcon from '../assets/skillsListIcon.png'
 import { skillsList, skillsIcons, skillsSubTitle } from '../Constants/Constants'
 
+
+
+
 export default function skills({ scrolled }) {
     return (
         <div className='row skillsDiv px-4 py-5'>
