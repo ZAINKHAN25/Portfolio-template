@@ -5,10 +5,6 @@ import { skillsList, skillsIcons, skillsSubTitle } from '../Constants/Constants'
 
 
 
-
-
-
-
 export default function skills({ scrolled }) {
     return (
         <div className='row skillsDiv px-4 py-5'>
