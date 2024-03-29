@@ -17,6 +17,7 @@ export default function Services({ scrolled }) {
                                         <div className="iconDiv">
                                             <BsJournalBookmarkFill className="sevicesIcon" />
                                         </div>
+                                        
                                         <div className="serviceHeading">
                                             <h4>{singleService.title}</h4>
                                         </div>
