@@ -1,19 +1,22 @@
-import navbarLogo from '../assets/navbarLogo.png';
+import navbarLogo from '../assets/navbarLogo.png'
 import { useEffect, useRef, useState } from 'react';
 import { FaBars } from "react-icons/fa";
-
-import HomeDiv from './HomeDiv.jsx';
-import Skills from './Skills.jsx';
-import Services from './Services.jsx';
-
-
+import HomeDiv from './HomeDiv';
+import Skills from './Skills';
+import Services from './Services';
+import Portfolio from './Portfolio';
+import Contact from './Contact';
+import Footer from './Footer';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [isSkills, setIsSkills] = useState(false);
     const [servicesScroll, setServicesScroll] = useState(false);
+    const [portfolioScroll, setPortfolioScroll] = useState(false);
     const skillsRef = useRef(null);
     const servicesRef = useRef(null);
+    const portfolioRef = useRef(null);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,8 +36,8 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const skillsDivHeight = skillsRef.current.offsetHeight;
-            const isSkillscrolled = window.scrollY > (skillsDivHeight - 500);
+            const skillsDivHeight = skillsRef.current.offsetHeight - 500;
+            const isSkillscrolled = window.scrollY > skillsDivHeight;
             setIsSkills(isSkillscrolled);
         };
 
@@ -49,9 +52,9 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleServicesScroll = () => {
-            const serviceDivHeight = servicesRef.current.offsetHeight;
-            const isScrolled = window.scrollY > (serviceDivHeight - 500);
-            setServicesScroll(isScrolled);
+            const serviceDivHeight = servicesRef.current.offsetHeight - 900;
+            const isServicesScroll = window.scrollY > serviceDivHeight;
+            setServicesScroll(isServicesScroll);
         };
 
         window.addEventListener('scroll', handleServicesScroll);
@@ -59,8 +62,24 @@ export default function Navbar() {
         return () => {
             window.removeEventListener('scroll', handleServicesScroll);
         };
+
     }, []);
 
+
+    useEffect(() => {
+        const handlePortfolioScroll = () => {
+            const portfolioDivHeight = portfolioRef.current.clientHeight;
+            const isPortfolioScroll = window.scrollY > portfolioDivHeight;
+            setPortfolioScroll(isPortfolioScroll);
+        };
+
+        window.addEventListener('scroll', handlePortfolioScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handlePortfolioScroll);
+        };
+
+    }, []);
 
 
     return (
@@ -113,7 +132,7 @@ export default function Navbar() {
             </nav>
 
             <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="scrollspy-example bg-body-tertiary rounded-2" tabIndex="0">
-                <div className='HomeDivParentElement'>
+                <div id='home' className="homeDiv px-3">
                     <HomeDiv />
                 </div>
                 <div id='skills' className="skillsDiv px-3 py-5 pb-0 pb-lg-4" ref={skillsRef} style={{ visibility: isSkills && "visible" }}>
@@ -122,13 +141,17 @@ export default function Navbar() {
                 <div id='service' className="services px-3 my-5" ref={servicesRef} style={{ visibility: servicesScroll && "visible" }}>
                     <Services scrolled={servicesScroll} />
                 </div>
-                <div id='portfolio' className="section">
-                    <h1>portfolio</h1>
+                <div id='portfolio' className="portfolio" ref={portfolioRef} style={{ visibility: portfolioScroll && "visible" }}>
+                    <Portfolio scrolled={portfolioScroll} />
                 </div>
-                <div id='contact' className="section">
-                    <h1>Contact</h1>
+                <div id='contact' className="contact px-5 pt-5 py-5">
+                    <Contact />
+                </div>
+
+                <div className="footer">
+                    <Footer />
                 </div>
             </div>
         </>
     )
-};
+}

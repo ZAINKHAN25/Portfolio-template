@@ -3,19 +3,18 @@ import skillsImg from '../assets/skillsImg.svg'
 import skillsListIcon from '../assets/skillsListIcon.png'
 import { skillsList, skillsIcons, skillsSubTitle } from '../Constants/Constants'
 
-
-export default function skills({ scrolled }) {
+export default function Skills({ scrolled }) {
     return (
-        <div className='row skillsDiv px-4 py-5'>
+        <div className='row px-2 py-5 pb-1'>
             <div className='col-lg-6 col-md-12 col-12 d-flex flex-column justify-content-center align-items-center'>
                 <img src={skillsImg} alt="" className={`skillsImg ${scrolled && "fadeInLeft"}`} />
             </div>
             <div className="col-lg-6 col-md-12 col-12 d-flex justify-content-center align-items-center">
                 <div className='d-flex flex-column justify-content-center align-items-center skillsIconDiv'>
 
-                    <h1 className={`skillsHeading ${scrolled && "fadeInRight"}`}>
-                        What I do
-                    </h1>
+                    <h3 className={`skillsHeading ${scrolled && "fadeInRight"}`}>
+                        Skills
+                    </h3>
                     <p className={`skillsSubTitle ${scrolled && "fadeInRight"}`}>
                         {skillsSubTitle}
                     </p>

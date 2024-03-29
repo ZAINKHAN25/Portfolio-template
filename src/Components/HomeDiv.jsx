@@ -1,54 +1,58 @@
-import React from 'react';
+import React from 'react'
+import bannerImg2 from '../assets/bannerImg2.svg'
+import homeDivImg from '../assets/homeDivImg.png'
+import htmlIcon from '../assets/htmlIcon.png'
+import jsonIcon from '../assets/jsonIcon.png'
 import { TypeAnimation } from 'react-type-animation'
 
-
-import bannerImg2 from '../assets/bannerImg2.svg';
-import manUsingLaptop from "../assets/man-using-laptop.png";
-import htmlIcon from "../assets/html-icon.png";
-import cssIcon from "../assets/css-icon.png";
-import jsIcon from "../assets/js-icon.png";
-import bootstrapIcon from "../assets/bootstrap-5-logo-icon.webp";
-
-function HomeDiv() {
+export default function HomeDiv() {
     return (
-        <div id='home' className="homeDiv">
-            <div className="bubble2"></div>
-            <div className="bubble1"></div>
-            <div className="bubble3"></div>
-            <div className="bubble4"></div>
-            <div className="bubble5"></div>
-            <div className='txtDivOfHome p-5'>
-                <h1>
-                    <div>Hey there!</div>
-                    I'm <span className='spanOfFrelancer'>
-                        <TypeAnimation
-                            sequence={[
-                                'Zain',
-                                2000,
-                                'freelancer',
-                                2000,
-                                'Frontend Developer',
-                                2000,
-                                'MERN Stack Devloper',
-                                2000,
-                            ]}
-                            repeat={Infinity} />
-                    </span>
-                </h1>
-                <h3 className='CreateThousandOfWebsites mb-5'>I CREATE THOUSAND OFF WEBSITE</h3>
-                <button className='btnOfHireMe fs-4 px-5 py-2'>Hire Me</button>
-            </div>
+        <>
             <img src={bannerImg2} alt="" className='homeImg' />
+            <div className="row px-4 py-5">
+                <div className="col-lg-6 col-md-12 col-12 d-flex flex-column justify-content-center align-items-center">
+                    <div className="bubble2"></div>
+                    <div className="bubble1"></div>
+                    <div className="bubble3"></div>
+                    <div className="bubble4"></div>
+                    <div className="bubble5"></div>
+                    <h2>
+                        Hey there!
+                        <br />
+                        I'm Zain Khan
+                        <br />
+                        <span>
+                            <TypeAnimation
+                                sequence={[
+                                    'freelancer',
+                                    2000,
+                                    'Frontend Developer',
+                                    2000,
+                                    'MERN Stack Developer',
+                                    2000,
+                                ]}
+                                repeat={Infinity}
+                            />
+                        </span>
+                    </h2>
 
-            <img className='htmlIcon' src={htmlIcon} alt="" srcSet="" />
-            <img className='cssIcon' src={cssIcon} alt="" srcSet="" />
-            <img className='jsIcon' src={jsIcon} alt="" srcSet="" />
-            <img className='bootstrapIcon' src={bootstrapIcon} alt="" srcSet="" />
+                    <h4>
+                        I create eye catching website
+                    </h4>
 
+                    <div className="btnDiv">
+                        <button className='btn'>
+                            contact me
+                        </button>
+                    </div>
+                </div>
 
-            <img src={manUsingLaptop} alt="" className='ManUsingLaptop' />
-        </div>
+                <div className='col-lg-6 col-md-12 col-12 homeImgDiv d-flex justify-content-center align-items-center'>
+                    <img src={homeDivImg} alt="" className='homeDivImg' />
+                    <img src={htmlIcon} alt="" className='htmlIcon' />
+                    <img src={jsonIcon} alt="" className='jsonIcon' />
+                </div>
+            </div>
+        </>
     )
 }
-
-export default HomeDiv;
